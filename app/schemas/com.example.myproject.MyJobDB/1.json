@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "e5aa5c179eaf2e4eab113954389aff88",
+    "entities": [
+      {
+        "tableName": "joblist",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`job_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `job_title` TEXT NOT NULL, `job_description` TEXT NOT NULL, `job_price` REAL NOT NULL, `job_date` TEXT NOT NULL, `job_time` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "jobid",
+            "columnName": "job_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jobTitle",
+            "columnName": "job_title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jobDesc",
+            "columnName": "job_description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jobPrice",
+            "columnName": "job_price",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jobDate",
+            "columnName": "job_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jobTime",
+            "columnName": "job_time",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "job_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e5aa5c179eaf2e4eab113954389aff88')"
+    ]
+  }
+}
